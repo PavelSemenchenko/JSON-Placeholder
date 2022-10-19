@@ -8,16 +8,16 @@
 import Foundation
 import Alamofire
 
-struct Albums: Codable {
+struct Album: Codable {
     let userId: Int
     let id: Int
     let title: String
 }
 
 class AlbumsRepository {
-    func loadAll(completion: @escaping ([Albums]) -> Void) {
+    func loadAll(completion: @escaping ([Album]) -> Void) {
         let request = AF.request("https://jsonplaceholder.typicode.com/albums")
-        request.responseDecodable(of: [Albums].self) { albumsResponse in
+        request.responseDecodable(of: [Album].self) { albumsResponse in
             completion(albumsResponse.value ?? [])
         }
     }

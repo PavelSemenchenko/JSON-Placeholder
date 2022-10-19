@@ -9,17 +9,30 @@ import UIKit
 
 class AlbumCell: UITableViewCell {
     
+    @IBOutlet weak var userIdCell: UILabel!
     
-
+    @IBOutlet weak var idCell: UILabel!
+    
+    @IBOutlet weak var titleCell: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var data: Album! {
+        didSet {
+            prepareForReuse()
+        }
     }
+    var albumsRepository: AlbumsRepository!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        userIdCell.text = "The User Id is: \(data.userId)"
+        idCell.text = "ID is: \(data.id)"
+        titleCell.text = "\(data.title)"
+    }
+    
     
 }

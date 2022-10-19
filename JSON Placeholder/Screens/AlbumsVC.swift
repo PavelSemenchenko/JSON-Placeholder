@@ -10,16 +10,26 @@ import UIKit
 
 class AlbumsVC: UIViewController, UITableViewDataSource {
     
+    @IBOutlet weak var albumsTable: UITableView!
     
     
-    // outlet on table with name albumsTable
     let albumsRepository = AlbumsRepository()
-    var albums: [Albums] = []
+    var albums: [Album] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let cellNib = UINib(nibName: "AlbumCell", bundle: nil)
+        albumsTable.dataSource = self
+        albumsTable.register(cellNib, forCellReuseIdentifier: "albumCell")
         
+        getAlbums()
+    }
+    
+    func getAlbums() {
+        albumsRepository.loadAll { allAlbums in
+            self.albums = allAlbums
+            self.albumsTable.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -27,7 +37,7 @@ class AlbumsVC: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "albumsCell", for: IndexPath) as! AlbumCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "albumCell", for: indexPath) as! AlbumCell
         cell.data = albums[indexPath.row]
         cell.albumsRepository = albumsRepository
         return cell

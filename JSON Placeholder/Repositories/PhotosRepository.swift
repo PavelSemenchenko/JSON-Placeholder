@@ -16,11 +16,11 @@ struct Photo: Codable {
 
 class PhotosRepository {
     func loadAll(completion: @escaping ([Photo]) -> Void) {
-        let request = AF.request("https://jsonplaceholder.typicode.com/photos?albumId=\(albumId)")
+        let request = AF.request("https://jsonplaceholder.typicode.com/photos?albumId=2")
         request.responseDecodable(of: [Photo].self) {photosResponse in
             completion(photosResponse.value ?? [])
         }
     }
 }
-albumId = 2
+// albumId = 2 \(albumId)
 
