@@ -10,13 +10,13 @@ import Alamofire
 import AlamofireImage
 
 struct Photo: Codable {
-    let albumId: Int
+    let albumId: String
     let thumbnailUrl: String
 }
-
+let albumId = 2
 class PhotosRepository {
     func loadAll(completion: @escaping ([Photo]) -> Void) {
-        let request = AF.request("https://jsonplaceholder.typicode.com/photos?albumId=2")
+        let request = AF.request("https://jsonplaceholder.typicode.com/photos?albumId=\(albumId)")
         request.responseDecodable(of: [Photo].self) {photosResponse in
             completion(photosResponse.value ?? [])
         }

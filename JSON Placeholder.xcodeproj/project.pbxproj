@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A0FEF3B2901D8ED007F4ACE /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0FEF392901D8ED007F4ACE /* CollectionViewCell.swift */; };
+		2A0FEF3C2901D8ED007F4ACE /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A0FEF3A2901D8ED007F4ACE /* CollectionViewCell.xib */; };
 		2A9BE7E2290085F1007BF524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9BE7E1290085F1007BF524 /* AppDelegate.swift */; };
 		2A9BE7E4290085F1007BF524 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9BE7E3290085F1007BF524 /* SceneDelegate.swift */; };
 		2A9BE7E9290085F1007BF524 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9BE7E7290085F1007BF524 /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A0FEF392901D8ED007F4ACE /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		2A0FEF3A2901D8ED007F4ACE /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		2A9BE7DE290085F1007BF524 /* JSON Placeholder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JSON Placeholder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9BE7E1290085F1007BF524 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A9BE7E3290085F1007BF524 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A0FEF382901AEBA007F4ACE /* PhotoCell */ = {
+			isa = PBXGroup;
+			children = (
+				2A0FEF3A2901D8ED007F4ACE /* CollectionViewCell.xib */,
+				2A0FEF392901D8ED007F4ACE /* CollectionViewCell.swift */,
+			);
+			path = PhotoCell;
+			sourceTree = "<group>";
+		};
 		2A9BE7D5290085F1007BF524 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +126,7 @@
 		2A9BE80C29009CEB007BF524 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				2A0FEF382901AEBA007F4ACE /* PhotoCell */,
 				2A9BE80729009C86007BF524 /* AlbumCell */,
 			);
 			path = Cells;
@@ -188,6 +202,7 @@
 				2A9BE7EB290085F2007BF524 /* Assets.xcassets in Resources */,
 				2A9BE7E9290085F1007BF524 /* Main.storyboard in Resources */,
 				2A9BE80B29009CE2007BF524 /* AlbumCell.xib in Resources */,
+				2A0FEF3C2901D8ED007F4ACE /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +215,7 @@
 			files = (
 				2A9BE7FE29008723007BF524 /* AlbumsVC.swift in Sources */,
 				2A9BE8002900873B007BF524 /* PhotosVC.swift in Sources */,
+				2A0FEF3B2901D8ED007F4ACE /* CollectionViewCell.swift in Sources */,
 				2A9BE7E2290085F1007BF524 /* AppDelegate.swift in Sources */,
 				2A9BE80A29009CE2007BF524 /* AlbumCell.swift in Sources */,
 				2A9BE7FB2900868B007BF524 /* PhotosRepository.swift in Sources */,
