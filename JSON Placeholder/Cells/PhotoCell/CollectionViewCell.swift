@@ -22,7 +22,7 @@ class CollectionViewCell: UICollectionViewCell {
             prepareForReuse()
         }
     }
-   // var photosRepository = PhotosRepository!
+    var photosRepository: PhotosRepository!
     
     override func prepareForReuse() {
         super.prepareForReuse()
