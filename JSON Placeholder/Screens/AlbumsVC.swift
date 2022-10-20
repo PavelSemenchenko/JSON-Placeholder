@@ -51,7 +51,7 @@ class AlbumsVC: UIViewController, UITableViewDataSource,  UITableViewDelegate {
         openController.loadPhotosCompletion = { openPhoto in
             if let album = openPhoto {
                 self.albums[index] = album
-                self.albumsTable.reloadData()
+                openController.photosCollection.reloadData()
                 
             }
         }
