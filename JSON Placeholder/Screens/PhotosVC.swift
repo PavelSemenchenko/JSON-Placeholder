@@ -10,14 +10,18 @@ import UIKit
 
 
 class PhotosVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    
+        
     @IBOutlet var photosCollection: UICollectionView!
+    
     let photosRepository = PhotosRepository()
     var photos: [Photo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let cellNib = UINib(nibName: "PhotoViewCell", bundle: nil)
+        collectionView.dataSource = self
+        collectionView.register(cellNib, forCellWithReuseIdentifier: "PhotoViewCell")
+        
         
     }
     // @DocumentID var id: String?
