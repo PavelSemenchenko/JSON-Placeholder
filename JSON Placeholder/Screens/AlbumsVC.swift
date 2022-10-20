@@ -55,6 +55,6 @@ class AlbumsVC: UIViewController, UITableViewDataSource,  UITableViewDelegate {
                 
             }
         }
-        
     }
 }
+// PhotosVC().((Album?) -> Void)? = путь и таблица

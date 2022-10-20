@@ -72,7 +72,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Rmy-rW-1dZ" customClass="albums">
-                                <rect key="frame" x="8" y="155" width="374" height="647"/>
+                                <rect key="frame" x="8" y="123" width="374" height="679"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemGray5Color"/>
                             </tableView>
@@ -83,7 +83,7 @@
                             <constraint firstItem="Rmy-rW-1dZ" firstAttribute="leading" secondItem="51I-sJ-zWo" secondAttribute="leading" constant="8" id="LbV-mg-dWM"/>
                             <constraint firstItem="51I-sJ-zWo" firstAttribute="trailing" secondItem="Rmy-rW-1dZ" secondAttribute="trailing" constant="8" id="jSc-t2-qx4"/>
                             <constraint firstItem="51I-sJ-zWo" firstAttribute="bottom" secondItem="Rmy-rW-1dZ" secondAttribute="bottom" constant="8" id="nWz-jj-Aa5"/>
-                            <constraint firstItem="Rmy-rW-1dZ" firstAttribute="top" secondItem="51I-sJ-zWo" secondAttribute="top" constant="64" id="v1r-uQ-I9Y"/>
+                            <constraint firstItem="Rmy-rW-1dZ" firstAttribute="top" secondItem="51I-sJ-zWo" secondAttribute="top" constant="32" id="v1r-uQ-I9Y"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="r2R-1g-erT"/>
