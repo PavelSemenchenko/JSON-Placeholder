@@ -16,7 +16,7 @@ class AlbumsVC: UIViewController, UITableViewDataSource,  UITableViewDelegate {
     let albumsRepository = AlbumsRepository()
     var albums: [Album] = []
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let cellNib = UINib(nibName: "AlbumCell", bundle: nil)
@@ -48,13 +48,12 @@ class AlbumsVC: UIViewController, UITableViewDataSource,  UITableViewDelegate {
         // что сделать после - куда идем и что делаем/ открываем?
         let albumToOpen = albums[index]
         let openController = PhotosVC()
-        openController.loadPhotosCompletion = { openPhoto in
-            if let album = openPhoto {
-                self.albums[index] = album
-                openController.photosCollection.reloadData()
-                
-            }
-        }
+        openController.album = albumToOpen
+        self.navigationController.push(openController)
+        openController.photosCollection.reloadData()
+        
     }
 }
+
+
 // PhotosVC().((Album?) -> Void)? = путь и таблица

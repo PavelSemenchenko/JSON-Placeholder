@@ -14,6 +14,7 @@ struct Photo: Codable {
     let thumbnailUrl: String
 }
 let albumId = 2
+
 class PhotosRepository {
     func loadAll(completion: @escaping ([Photo]) -> Void) {
         let request = AF.request("https://jsonplaceholder.typicode.com/photos?albumId=\(albumId)")
@@ -22,5 +23,6 @@ class PhotosRepository {
         }
     }
 }
-// albumId = 2 \(albumId)
+
+
 
