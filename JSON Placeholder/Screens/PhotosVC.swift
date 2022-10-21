@@ -8,8 +8,7 @@
 import Foundation
 import UIKit
 
-
-class PhotosVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class PhotosVC: UICollectionViewController {
     
     @IBOutlet var photosCollection: UICollectionView!
     
@@ -19,13 +18,13 @@ class PhotosVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        let cellNib = UINib(nibName: "PhotoViewCell", bundle: nil)
+        let cellNib = UINib(nibName: "CollectionViewCell", bundle: nil)
         collectionView.dataSource = self
-        collectionView.register(cellNib, forCellWithReuseIdentifier: "PhotoViewCell")
+        collectionView.register(cellNib, forCellWithReuseIdentifier: "CollectionViewCell")
         
         getPhotos()
     }
-    // @DocumentID var id: String?
+    
     var loadPhotosCompletion: ((Album?) -> Void)?
     
     func getPhotos() {
@@ -38,8 +37,10 @@ class PhotosVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let rawCell = photosCollection.dequeueReusableCell(withReuseIdentifier: "PhotoViewCell", for: indexPath)
+    override func collectionView(_ collectionView: UICollectionView,
+                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let rawCell = photosCollection.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell",
+                                                           for: indexPath)
         guard let cell = rawCell as? CollectionViewCell else {
             fatalError("error")
         }

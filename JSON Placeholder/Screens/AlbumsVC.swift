@@ -50,10 +50,8 @@ class AlbumsVC: UIViewController, UITableViewDataSource,  UITableViewDelegate {
         let openController = PhotosVC()
         openController.currentAlbum = albumToOpen
         self.navigationController?.pushViewController((openController), animated: true)
-        // openController.photosCollection.reloadData()
+        openController.photosCollection.reloadData()
         
     }
 }
 
-
-// PhotosVC().((Album?) -> Void)? = путь и таблица
