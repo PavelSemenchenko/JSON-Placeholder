@@ -46,11 +46,11 @@ class AlbumsVC: UIViewController, UITableViewDataSource,  UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
         // что сделать после - куда идем и что делаем/ открываем?
-        let photoToOpen = Photo[index]
+        let albumToOpen = albums[index]
         let openController = PhotosVC()
-        openController.photos = photoToOpen
+        openController.photos = albumToOpen
         self.navigationController.push(openController)
-        openController.photosCollection.reloadData()
+        // openController.photosCollection.reloadData()
         
     }
 }
