@@ -15,6 +15,7 @@ class PhotosVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let photosRepository = PhotosRepository()
     var photos: [Photo] = []
+    var currentAlbum: Album!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class PhotosVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var loadPhotosCompletion: ((Album?) -> Void)?
     
     func getPhotos() {
-        photosRepository.loadAll { allPhotos in
+        photosRepository.loadAll(albumId: "\(albumId)") { allPhotos in
             self.photos = allPhotos
             self.collectionView.reloadData()
          }

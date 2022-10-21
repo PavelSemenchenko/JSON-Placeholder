@@ -16,7 +16,7 @@ struct Photo: Codable {
 let albumId = 2
 
 class PhotosRepository {
-    func loadAll(completion: @escaping ([Photo]) -> Void) {
+    func loadAll(albumId:String, completion: @escaping ([Photo]) -> Void) {
         let request = AF.request("https://jsonplaceholder.typicode.com/photos?albumId=\(albumId)")
         request.responseDecodable(of: [Photo].self) {photosResponse in
             completion(photosResponse.value ?? [])

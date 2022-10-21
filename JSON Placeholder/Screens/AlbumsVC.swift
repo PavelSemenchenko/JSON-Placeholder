@@ -48,7 +48,7 @@ class AlbumsVC: UIViewController, UITableViewDataSource,  UITableViewDelegate {
         // что сделать после - куда идем и что делаем/ открываем?
         let albumToOpen = albums[index]
         let openController = PhotosVC()
-        openController.photos = albumToOpen
+        openController.currentAlbum = albumToOpen
         self.navigationController?.pushViewController((openController), animated: true)
         // openController.photosCollection.reloadData()
         
