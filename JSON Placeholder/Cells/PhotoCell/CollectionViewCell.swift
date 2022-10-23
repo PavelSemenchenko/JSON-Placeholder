@@ -26,7 +26,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        albumIdLabel.text = data.albumId
+        albumIdLabel.text = String(data.albumId)
         guard let url = URL(string: data.thumbnailUrl) else {
             albumPhotosImage.image = nil
             return

@@ -25,11 +25,11 @@ class PhotosVC: UICollectionViewController {
         getPhotos()
     }
     
-    var loadPhotosCompletion: ((Album?) -> Void)?
+    // var loadPhotosCompletion: ((Album?) -> Void)?
     
     func getPhotos() {
-        photosRepository.loadAll(albumId: currentAlbum.id) { allPhotos in
-            self.photos = allPhotos
+        photosRepository.loadAll(albumId: currentAlbum.id) { photos in
+            self.photos = photos
             self.collectionView.reloadData()
          }
                                  
