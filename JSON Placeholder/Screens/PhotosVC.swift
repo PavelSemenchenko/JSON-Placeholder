@@ -34,7 +34,8 @@ class PhotosVC: UICollectionViewController {
          }
                                  
      }
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
     override func collectionView(_ collectionView: UICollectionView,
