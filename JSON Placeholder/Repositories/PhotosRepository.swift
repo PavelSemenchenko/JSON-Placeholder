@@ -10,7 +10,7 @@ import Alamofire
 import AlamofireImage
 
 struct Photo: Codable {
-    let albumId: String
+    let albumId: Int
     let thumbnailUrl: String
 }
 
