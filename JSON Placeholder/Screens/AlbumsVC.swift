@@ -49,9 +49,17 @@ class AlbumsVC: UIViewController, UITableViewDataSource,  UITableViewDelegate {
         let albumToOpen = albums[index]
         let openController = PhotosVC()
         openController.currentAlbum = albumToOpen
-        self.navigationController?.pushViewController((openController), animated: true)
+        self.navigationController?.pushViewController(openController, animated: true)
         openController.photosCollection.reloadData()
+        // STOP MIND
+        let fotoScreen = self.storyboard?.instantiateViewController(withIdentifier: "photosVC") as! PhotosVC
+        self.navigationController?.pushViewController(fotoScreen, animated: true)
         
+        /*
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let PhotosVC = storyBoard.instantiateViewController(withIdentifier: "photosVC") as! PhotosVC
+        self.present(PhotosVC, animated: true, completion: nil)
+        */
     }
 }
 
